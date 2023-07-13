@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>ユーザー追加</title>
+    <script>
+      const mapUsers = () => {
+        const users = [
+          { name: 'John Doe', age: 30, email: 'john@example.com' },
+          { name: 'Jane Smith', age: 28, email: 'jane@example.com' },
+          { name: 'Bob Johnson', age: 32, email: 'bob@example.com' }
+        ];
+
+        const table = document.getElementById('userTable');
+        users.map(user => {
+          // 新しい行を作成
+          let row = table.insertRow();
+
+          // 各セルにデータを追加
+          let nameCell = row.insertCell();
+          let ageCell = row.insertCell();
+          let emailCell = row.insertCell();
+
+          nameCell.textContent = user.name;
+          ageCell.textContent = user.age;
+          emailCell.textContent = user.email;
+        });
+      };
+    </script>
+</head>
+<body>
+    <button onclick="mapUsers()">固定のユーザーを追加</button>
+
+    <table id="userTable">
+      <tr>
+        <th>氏名</th>
+        <th>性別</th>
+        <th>出身地</th>
+      </tr>
+    </table>
+</body>
+</html>
